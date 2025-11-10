@@ -227,7 +227,7 @@ const Contact = () => {
                 <CardContent className="p-0">
                   <iframe
                     title="Office Location"
-                    src="https://maps.google.com/maps?q=Chamber+No+134,+1st+Floor,+Sector+12,+Faridabad+121007&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1093.5003746349382!2d77.32551896963801!3d28.383918378367575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddc38d65ad6d%3A0x5f7753ca870675e3!2sShashi%20Mishra%20advocate%20and%20associates!5e1!3m2!1sen!2sin!4v1762786294782!5m2!1sen!2sin"
                     width="100%"
                     height="450"
                     style={{ border: 0 }}
