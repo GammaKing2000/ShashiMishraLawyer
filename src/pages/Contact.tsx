@@ -20,19 +20,21 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   /**
-   * Handles form submission by sending data to Google Apps Script endpoint
+   * Handles form submission by sending data to Node.js backend
    * @param e - Form submission event
    */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // TODO: Replace this URL with your actual Google Apps Script deployment URL
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/your-deployment-id/exec";
+    // TODO: Replace this URL with your deployed backend URL
+    // For local development: http://localhost:3001/api/contact
+    // For production: https://your-backend-url.com/api/contact
+    const BACKEND_URL = "http://localhost:3001/api/contact";
 
     try {
-      // Send form data to Google Apps Script as JSON
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      // Send form data to Node.js backend as JSON
+      const response = await fetch(BACKEND_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
