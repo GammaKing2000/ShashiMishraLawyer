@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, BookOpen, Scale, Target } from "lucide-react";
+import lawyerProfile from "@/assets/lawyer-profile.jpg";
 
 const About = () => {
   return (
@@ -23,6 +24,13 @@ const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <img 
+                  src={lawyerProfile} 
+                  alt="Shashi Mishra - Professional Lawyer at Faridabad District Courts"
+                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                />
+              </div>
               <div>
                 <h2 className="text-3xl font-bold text-primary mb-6">Shashi Mishra</h2>
                 <p className="text-foreground mb-4">
@@ -42,9 +50,11 @@ const About = () => {
                   of clients from various backgrounds.
                 </p>
               </div>
-              <div className="space-y-6">
-                <Card>
-                  <CardContent className="p-6">
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <Card>
+                <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="p-3 bg-secondary/10 rounded-full">
                         <Award className="h-6 w-6 text-secondary" />
@@ -90,8 +100,7 @@ const About = () => {
                 </Card>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Mission Section */}
         <section className="py-16 bg-muted/50">
