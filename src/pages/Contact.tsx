@@ -227,7 +227,7 @@ const Contact = () => {
                 <CardContent className="p-0">
                   <iframe
                     title="Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.876423456789!2d77.31234567890123!3d28.41234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI0JzQ0LjQiTiA3N8KwMTgnNDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    src="https://maps.google.com/maps?q=Chamber+No+134,+1st+Floor,+Sector+12,+Faridabad+121007&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="450"
                     style={{ border: 0 }}
