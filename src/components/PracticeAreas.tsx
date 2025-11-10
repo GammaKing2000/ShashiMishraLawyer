@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 const practiceAreas = [
   {
     icon: Scale,
-    title: "Civil & Criminal Law",
-    description: "Comprehensive legal representation in civil disputes and criminal defense matters.",
+    title: "Civil Law",
+    description: "Comprehensive legal representation in civil disputes, litigation, and legal matters.",
   },
   {
     icon: Users,
@@ -23,11 +23,6 @@ const practiceAreas = [
     icon: Building,
     title: "Company Law",
     description: "Corporate legal services including compliance, contracts, and business disputes.",
-  },
-  {
-    icon: Shield,
-    title: "Bail Matters",
-    description: "Prompt and effective representation for bail applications in all types of cases.",
   },
   {
     icon: Car,
