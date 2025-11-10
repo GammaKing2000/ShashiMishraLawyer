@@ -6,15 +6,15 @@ import { Scale, Users, Home, Building, Shield, FileText, Car, CreditCard } from 
 const practiceAreasDetailed = [
   {
     icon: Scale,
-    title: "Civil & Criminal Law",
-    description: "Comprehensive legal representation in civil disputes and criminal defense matters.",
+    title: "Civil Law",
+    description: "Comprehensive legal representation in civil disputes and litigation matters.",
     details: [
       "Civil litigation and dispute resolution",
-      "Criminal defense and prosecution",
       "Writs and appeals",
       "Arbitration and mediation",
       "Contract disputes and enforcement",
       "Tort claims and liability matters",
+      "Legal consultation and advisory",
     ],
   },
   {
@@ -54,19 +54,6 @@ const practiceAreasDetailed = [
       "Mergers and acquisitions",
       "Shareholder disputes",
       "Intellectual property protection",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "Bail Matters",
-    description: "Swift and effective representation for bail applications.",
-    details: [
-      "Regular bail applications",
-      "Anticipatory bail",
-      "Interim bail petitions",
-      "Cancellation of bail",
-      "Bail conditions modification",
-      "Emergency bail representation",
     ],
   },
   {
