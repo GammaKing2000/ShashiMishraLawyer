@@ -17,15 +17,58 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  /**
+   * Handles form submission by sending data to Google Apps Script endpoint
+   * @param e - Form submission event
+   */
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send the form data to a backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you soon.",
-    });
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    // TODO: Replace this URL with your actual Google Apps Script deployment URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/your-deployment-id/exec";
+
+    try {
+      // Send form data to Google Apps Script as JSON
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      // Show success message
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We will get back to you soon.",
+      });
+
+      // Clear form after successful submission
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch (error) {
+      // Show error message if submission fails
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Unable to send your message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -137,9 +180,14 @@ const Contact = () => {
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
+                      <Button 
+                        type="submit" 
+                        size="lg" 
+                        className="w-full bg-primary hover:bg-primary/90"
+                        disabled={isSubmitting}
+                      >
                         <Send className="mr-2 h-4 w-4" />
-                        Send Message
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
 
                       <p className="text-sm text-muted-foreground">
